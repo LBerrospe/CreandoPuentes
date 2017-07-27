@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { BeneficiaryGridItemComponent } from './beneficiary-grid-item/beneficiary-grid-item.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
-    BeneficiaryGridItemComponent
+    BeneficiaryGridItemComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule
