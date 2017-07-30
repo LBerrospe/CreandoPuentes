@@ -8,6 +8,8 @@ import { MainComponent } from './main/main/main.component';
 import { SignInComponent } from './main/sign-in/sign-in.component';
 import { SignUpComponent } from './main/sign-up/sign-up.component';
 
+import { UserService } from '../user-service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { SignUpComponent } from './main/sign-up/sign-up.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
