@@ -1,58 +1,52 @@
 <div class="sign-up">
-    <form>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp(signUpForm.value)">
         <div class="form-group">
-            <label for="exampleInputEmail1">Nombre(s)</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="name">Nombre(s)</label>
+            <input type="text" class="form-control" id="name" placeholder="Nombre(s)" [formControl]="signUpForm.get('name')" [(ngModel)]="name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Apellido(s)</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="last-name">Apellido(s)</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Apellido(s)" [formControl]="signUpForm.get('lastName')" [(ngModel)]="lastName">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Correo electronico</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="email-sign-up">Correo electronico</label>
+            <input type="email" class="form-control" id="email-sign-up" placeholder="Correo electronico" [formControl]="signUpForm.get('email')" [(ngModel)]="email">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" [formControl]="signUpForm.get('password')" [(ngModel)]="password">
         </div>
         <div class="form-inline">
             <div class="form-group">
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <!-- <label for="day">Dia</label> -->
+                <select id="day" class="form-control" [formControl]="signUpForm.get('day')" [(ngModel)]="day">
+                  <option *ngFor="let d of days">{{ d }}</option>
                 </select>
             </div>
             <div class="form-group">
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <!-- <label for="month">Mes</label> -->
+                <select id="month" class="form-control" [formControl]="signUpForm.get('month')" [(ngModel)]="month">
+                    <option *ngFor="let m of months">
+                        {{ m }}
+                    </option>
+
                 </select>
             </div>
             <div class="form-group">
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <!-- <label for="year">Año</label>  -->
+                <select id="year" class="form-control" [formControl]="signUpForm.get('year')" [(ngModel)]="year">
+                  <option *ngFor="let y of years">{{ y }}</option>
                 </select>
             </div>
         </div>
         <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Femenino
+            <input type="radio" value="female" formControlName="gender"> Femenino
         </label>
         <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Masculino
+            <input type="radio" value="male" formControlName="gender"> Masculino
         </label>
         <div class="form-group">
-            <button type="submit" class="btn btn-default">Crear cuenta</button>
+            <button type="submit" class="btn btn-success">Crear cuenta</button>
         </div>
     </form>
 </div>

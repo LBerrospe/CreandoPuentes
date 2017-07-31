@@ -15,10 +15,12 @@ export class SignInComponent {
   signInForm: FormGroup;
   /** */
   email: string;
+  password: string;
   
   /**
    * 
    * @param fb 
+   * @param userService 
    */
   constructor(fb: FormBuilder, private userService: UserService ) { 
     this.signInForm = fb.group({
@@ -32,6 +34,7 @@ export class SignInComponent {
    * @param value 
    */
   onSignIn(value: string) {
+    console.log('you submitted value: ', value);
     this.userService.setUser({
       name: 'user'
     });

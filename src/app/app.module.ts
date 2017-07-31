@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { GridComponent } from './beneficiary/beneficiary-grid/grid.component';
@@ -20,7 +21,8 @@ import { UserService } from '../user-service';
     SignUpComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserService
