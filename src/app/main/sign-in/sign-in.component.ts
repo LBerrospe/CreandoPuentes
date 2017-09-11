@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
-import { UserService } from '../../../user-service';
+// import { UserService } from '../../../user-service';
 /**
  * 
  */
 @Component({
   selector: 'sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  template: `
+  <div class="sign-in">
+    <form [formGroup]="signInForm" (ngSubmit)="onSignIn(signInForm.value)">
+        <div class="form-group">
+            <label for="email-sign-in">Correo</label>
+            <input id="email-sign-in" type="email" class="form-control" placeholder="Correo" [formControl]="signInForm.get('email')" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <label for="password-sign-in">Contraseña</label>
+            <input [formControl]="signInForm.get('password')" [(ngModel)]="password" type="password" class="form-control" id="password-sign-in" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="btn btn-success">Continuar</button>
+    </form>
+  </div>
+  `,
+  styleUrls: []
 })
 export class SignInComponent {
   /** */
@@ -22,7 +36,7 @@ export class SignInComponent {
    * @param fb 
    * @param userService 
    */
-  constructor(fb: FormBuilder, private userService: UserService ) { 
+  constructor(fb: FormBuilder) { 
     this.signInForm = fb.group({
       'email': ['', Validators.required],
       'password': ['', Validators.required]
@@ -35,9 +49,6 @@ export class SignInComponent {
    */
   onSignIn(value: string) {
     console.log('you submitted value: ', value);
-    this.userService.setUser({
-      name: 'user'
-    });
   }//onSignIn
 
 }//class

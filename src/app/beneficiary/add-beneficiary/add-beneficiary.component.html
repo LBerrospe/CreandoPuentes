@@ -1,0 +1,134 @@
+<div class="add-beneficiary">
+  <form [formGroup]="beneficiaryForm" (ngSubmit)="onBeneficiary(beneficiaryForm.value)">
+<!-- Personal data -->
+    <div class="form-group">
+        <label for="name">Nombre(s)</label>
+        <input type="text" class="form-control" id="name" placeholder="Nombre(s)" [formControl]="name">
+    </div>
+
+    <div class="form-group">
+        <label for="last-name">Apellido(s)</label>
+        <input type="text" class="form-control" id="last-name" placeholder="Apellido(s)" [formControl]="beneficiaryForm.get('lastName')" [(ngModel)]="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="nickname">Apodo(s)</label>
+      <input type="text" class="form-control" id="nickname" placeholder="Apodo(s)" [formControl]="nickname">
+    </div>
+
+    <div class="form-group">
+        <label for="curp">CURP</label>
+        <input type="text" class="form-control" id="curp" placeholder="CURP" [formControl]="curp">
+    </div>
+
+    <!-- <my-date-picker name="date" [options]="datePickerOptions" formControlName="date"></my-date-picker> -->
+    <!-- <div class="form-inline">
+        <div class="form-group">
+            <label for="day">Dia</label>
+            <select id="day" class="form-control" [formControl]="beneficiaryForm.get('day')" [(ngModel)]="day">
+              <option *ngFor="let d of days">{{ d }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="month">Mes</label>
+            <select id="month" class="form-control" [formControl]="beneficiaryForm.get('month')" [(ngModel)]="month">
+                <option *ngFor="let m of months">{{ m }}</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="year">Año</label>
+            <select id="year" class="form-control" [formControl]="beneficiaryForm.get('year')" [(ngModel)]="year">
+              <option *ngFor="let y of years">{{ y }}</option>
+            </select>
+        </div>
+    </div> -->
+
+    <label class="radio-inline">
+        <input type="radio" value="female" formControlName="gender"> Femenino
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="male" formControlName="gender"> Masculino
+    </label>
+<!-- Addres -->
+    <div class="form-group">
+        <label for="neighborhood">Colonia</label>
+        <input type="text" class="form-control" id="neighborhood" placeholder="Colonia" [formControl]="neighborhood">
+    </div>
+
+    <div class="form-group">
+        <label for="street">Calle</label>
+        <input type="text" class="form-control" id="street" placeholder="Calle" [formControl]="street">
+    </div>
+    
+    <div class="form-group">
+      <label for="number-ext"># Int</label>
+      <input type="text" class="form-control" id="number-ext" placeholder="# Int" [formControl]="number-ext">
+    </div>
+
+    <div class="form-group">
+      <label for="number-int"># Ext</label>
+      <input type="text" class="form-control" id="number-int" placeholder="# Ext" [formControl]="number-int">
+    </div>
+
+    <span>Entre</span>
+
+    <div class="form'inline">
+        <div class="form-group">
+            <label for="entre-calle-uno">Calle</label>
+            <input type="text" class="form-control" id="entre-calle-uno" placeholder="Calle" [formControl]="entre-calle-uno">
+          </div>
+
+          <span>Y</span>
+
+          <div class="form-group">
+            <label for="entre-calle-dos">Calle</label>
+            <input type="text" class="form-control" id="entre-calle-dos" placeholder="Calle" [formControl]="entre-calle-dos">
+          </div>
+    </div>
+<!-- Others -->
+    <label class="radio-inline">
+        <input type="radio" value="morning" formControlName="schedule"> Matutino
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="evening" formControlName="schedule"> Vespertino
+    </label>
+
+    <div class="form-group">
+        <label for="dining-room">No comedores</label>
+        <input type="text" class="form-control" id="dining-room" placeholder="No comedores" [formControl]="dining-room">
+    </div>
+  
+    <label class="radio-inline">
+        <input type="radio" value="active" formControlName="status"> Activo
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="inactive" formControlName="status"> Inactivo
+    </label>
+
+    <div class="form-group">
+        <label for="shirt">Camisa</label>
+        <input type="text" class="form-control" id="shirt" placeholder="Camisa" [formControl]="shirt">
+    </div>
+    
+    <div class="form-group">
+      <label for="pants">Pantalones</label>
+      <input type="text" class="form-control" id="pants" placeholder="Pantalones" [formControl]="pants">
+    </div>
+
+    <div class="form-group">
+      <label for="shoes">Zapatos</label>
+      <input type="text" class="form-control" id="shoes" placeholder="Zapatos" [formControl]="shoes">
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+    </div>
+
+  </form>
+</div>

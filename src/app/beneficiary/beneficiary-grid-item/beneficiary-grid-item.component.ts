@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Beneficiary } from '../beneficiary.model';
 
 @Component({
   selector: 'beneficiary-grid-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beneficiary-grid-item.component.css']
 })
 export class BeneficiaryGridItemComponent implements OnInit {
+
+  @Input() beneficiary: Beneficiary;
 
   constructor() { }
 
