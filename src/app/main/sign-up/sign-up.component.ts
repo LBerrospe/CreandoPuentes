@@ -16,18 +16,6 @@ export class SignUpComponent {
     dateFormat: 'dd/mm/yyyy',
     indicateInvalidDate: true,
   };
-  
-  /** */
-  // readonly days = [
-  //   '1', '2', '3', '4'
-  // ];
-  // readonly months = [
-  //   'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
-  //   'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-  // ];
-  // readonly years = [
-  //   '1990', '1991'
-  // ];
 
   constructor(fb: FormBuilder) {
     this.signUpForm = fb.group({

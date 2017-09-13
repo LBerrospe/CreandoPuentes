@@ -19,6 +19,7 @@ import { PhoneComponent } from './phone/phone.component';
 import { AddBeneficiaryComponent } from './beneficiary/add-beneficiary/add-beneficiary.component';
 // https://github.com/kekeh/mydatepicker#options-attribute
 import { MyDatePickerModule } from 'mydatepicker';
+import { CalendarModule } from 'angular-calendar';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: '' },
@@ -52,7 +53,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    CalendarModule.forRoot()
   ],
   providers: [
   ],

@@ -1,9 +1,9 @@
 <div class="add-beneficiary">
-  <form [formGroup]="beneficiaryForm" (ngSubmit)="onBeneficiary(beneficiaryForm.value)">
+  <form [formGroup]="beneficiaryForm" (ngSubmit)="onAddBeneficiary(beneficiaryForm.value)">
 <!-- Personal data -->
     <div class="form-group">
         <label for="name">Nombre(s)</label>
-        <input type="text" class="form-control" id="name" placeholder="Nombre(s)" [formControl]="name">
+        <input type="text" class="form-control" id="name" placeholder="Nombre(s)" [formControl]="beneficiaryForm.get('name')" [(ngModel)]="name">
     </div>
 
     <div class="form-group">
@@ -13,38 +13,21 @@
 
     <div class="form-group">
       <label for="nickname">Apodo(s)</label>
-      <input type="text" class="form-control" id="nickname" placeholder="Apodo(s)" [formControl]="nickname">
+      <input type="text" class="form-control" id="nickname" placeholder="Apodo(s)" [formControl]="beneficiaryForm.get('nickname')" [(ngModel)]="nickname">
     </div>
 
     <div class="form-group">
         <label for="curp">CURP</label>
-        <input type="text" class="form-control" id="curp" placeholder="CURP" [formControl]="curp">
+        <input type="text" class="form-control" id="curp" placeholder="CURP" [formControl]="beneficiaryForm.get('curp')" [(ngModel)]="curp">
     </div>
 
-    <!-- <my-date-picker name="date" [options]="datePickerOptions" formControlName="date"></my-date-picker> -->
-    <!-- <div class="form-inline">
-        <div class="form-group">
-            <label for="day">Dia</label>
-            <select id="day" class="form-control" [formControl]="beneficiaryForm.get('day')" [(ngModel)]="day">
-              <option *ngFor="let d of days">{{ d }}</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="month">Mes</label>
-            <select id="month" class="form-control" [formControl]="beneficiaryForm.get('month')" [(ngModel)]="month">
-                <option *ngFor="let m of months">{{ m }}</option>
-
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="year">Año</label>
-            <select id="year" class="form-control" [formControl]="beneficiaryForm.get('year')" [(ngModel)]="year">
-              <option *ngFor="let y of years">{{ y }}</option>
-            </select>
-        </div>
-    </div> -->
+    <my-date-picker 
+        name="date" 
+        [options]="dateOpts" 
+        placeholder="Fecha de nacimiento" 
+        [formControl]="beneficiaryForm.get('birthday')" 
+        [(ngModel)]="birthday">
+    </my-date-picker>
 
     <label class="radio-inline">
         <input type="radio" value="female" formControlName="gender"> Femenino
@@ -56,37 +39,37 @@
 <!-- Addres -->
     <div class="form-group">
         <label for="neighborhood">Colonia</label>
-        <input type="text" class="form-control" id="neighborhood" placeholder="Colonia" [formControl]="neighborhood">
+        <input type="text" class="form-control" id="neighborhood" placeholder="Colonia" [formControl]="beneficiaryForm.get('neighborhood')" [(ngModel)]="neighborhood">
     </div>
 
     <div class="form-group">
         <label for="street">Calle</label>
-        <input type="text" class="form-control" id="street" placeholder="Calle" [formControl]="street">
+        <input type="text" class="form-control" id="street" placeholder="Calle" [formControl]="beneficiaryForm.get('street')" [(ngModel)]="street">
     </div>
     
     <div class="form-group">
       <label for="number-ext"># Int</label>
-      <input type="text" class="form-control" id="number-ext" placeholder="# Int" [formControl]="number-ext">
+      <input type="text" class="form-control" id="number-ext" placeholder="# Int" [formControl]="beneficiaryForm.get('numberExt')" [(ngModel)]="numberExt">
     </div>
 
     <div class="form-group">
       <label for="number-int"># Ext</label>
-      <input type="text" class="form-control" id="number-int" placeholder="# Ext" [formControl]="number-int">
+      <input type="text" class="form-control" id="number-int" placeholder="# Ext" [formControl]="beneficiaryForm.get('numberInt')" [(ngModel)]="numberInt">
     </div>
 
     <span>Entre</span>
 
-    <div class="form'inline">
+    <div class="form-inline">
         <div class="form-group">
-            <label for="entre-calle-uno">Calle</label>
-            <input type="text" class="form-control" id="entre-calle-uno" placeholder="Calle" [formControl]="entre-calle-uno">
+            <label for="between-one">Calle</label>
+            <input type="text" class="form-control" id="between-one" placeholder="Calle" [formControl]="beneficiaryForm.get('betweenOne')" [(ngModel)]="betweenOne">
           </div>
 
           <span>Y</span>
 
           <div class="form-group">
-            <label for="entre-calle-dos">Calle</label>
-            <input type="text" class="form-control" id="entre-calle-dos" placeholder="Calle" [formControl]="entre-calle-dos">
+            <label for="betweenTwo">Calle</label>
+            <input type="text" class="form-control" id="betweenTwo" placeholder="Calle" [formControl]="beneficiaryForm.get('betweenTwo')" [(ngModel)]="betweenTwo">
           </div>
     </div>
 <!-- Others -->
@@ -99,8 +82,8 @@
     </label>
 
     <div class="form-group">
-        <label for="dining-room">No comedores</label>
-        <input type="text" class="form-control" id="dining-room" placeholder="No comedores" [formControl]="dining-room">
+        <label for="dinning-room">Calle</label>
+        <input type="text" class="form-control" id="dinning-room" placeholder="No comedores" [formControl]="beneficiaryForm.get('dinningRoom')" [(ngModel)]="dinningRoom">
     </div>
   
     <label class="radio-inline">
@@ -113,17 +96,17 @@
 
     <div class="form-group">
         <label for="shirt">Camisa</label>
-        <input type="text" class="form-control" id="shirt" placeholder="Camisa" [formControl]="shirt">
+        <input type="text" class="form-control" id="shirt" placeholder="Camisa" [formControl]="beneficiaryForm.get('shirt')" [(ngModel)]="shirt">
     </div>
     
     <div class="form-group">
       <label for="pants">Pantalones</label>
-      <input type="text" class="form-control" id="pants" placeholder="Pantalones" [formControl]="pants">
+      <input type="text" class="form-control" id="pants" placeholder="Pantalones" [formControl]="beneficiaryForm.get('pants')" [(ngModel)]="pants">
     </div>
 
     <div class="form-group">
       <label for="shoes">Zapatos</label>
-      <input type="text" class="form-control" id="shoes" placeholder="Zapatos" [formControl]="shoes">
+      <input type="text" class="form-control" id="shoes" placeholder="Zapatos" [formControl]="beneficiaryForm.get('shoes')" [(ngModel)]="shoes">
     </div>
 
     <div class="form-group">
