@@ -20,6 +20,8 @@ import { AddBeneficiaryComponent } from './beneficiary/add-beneficiary/add-benef
 // https://github.com/kekeh/mydatepicker#options-attribute
 import { MyDatePickerModule } from 'mydatepicker';
 import { CalendarModule } from 'angular-calendar';
+import { AddMentorComponent } from './mentor/add-mentor/add-mentor.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: '' },
@@ -48,7 +50,9 @@ const routes: Routes = [
     CalendarComponent,
     ProviderComponent,
     PhoneComponent,
-    AddBeneficiaryComponent
+    AddBeneficiaryComponent,
+    NavbarComponent,
+    AddMentorComponent
   ],
   imports: [
     BrowserModule,

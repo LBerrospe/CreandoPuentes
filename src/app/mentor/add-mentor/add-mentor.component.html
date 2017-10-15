@@ -1,0 +1,117 @@
+<div class="add-mentor">
+  <form [formGroup]="mentorForm" (ngSubmit)="onAddMentor(mentorForm.value)">
+<!-- Personal data -->
+    <div class="form-group">
+        <label for="name">Nombre(s)</label>
+        <input type="text" class="form-control" id="name" placeholder="Nombre(s)" [formControl]="mentorForm.get('name')" [(ngModel)]="name">
+    </div>
+
+    <div class="form-group">
+        <label for="last-name">Apellido(s)</label>
+        <input type="text" class="form-control" id="last-name" placeholder="Apellido(s)" [formControl]="mentorForm.get('lastName')" [(ngModel)]="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="nickname">Apodo(s)</label>
+      <input type="text" class="form-control" id="nickname" placeholder="Apodo(s)" [formControl]="mentorForm.get('nickname')" [(ngModel)]="nickname">
+    </div>
+
+    <div class="form-group">
+        <label for="curp">CURP</label>
+        <input type="text" class="form-control" id="curp" placeholder="CURP" [formControl]="mentorForm.get('curp')" [(ngModel)]="curp">
+    </div>
+
+    <my-date-picker 
+        name="date" 
+        [options]="dateOpts" 
+        placeholder="Fecha de nacimiento" 
+        [formControl]="mentorForm.get('birthday')" 
+        [(ngModel)]="birthday">
+    </my-date-picker>
+
+    <label class="radio-inline">
+        <input type="radio" value="female" formControlName="gender"> Femenino
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="male" formControlName="gender"> Masculino
+    </label>
+<!-- Addres -->
+    <div class="form-group">
+        <label for="neighborhood">Colonia</label>
+        <input type="text" class="form-control" id="neighborhood" placeholder="Colonia" [formControl]="mentorForm.get('neighborhood')" [(ngModel)]="neighborhood">
+    </div>
+
+    <div class="form-group">
+        <label for="street">Calle</label>
+        <input type="text" class="form-control" id="street" placeholder="Calle" [formControl]="mentorForm.get('street')" [(ngModel)]="street">
+    </div>
+    
+    <div class="form-group">
+      <label for="number-ext"># Int</label>
+      <input type="text" class="form-control" id="number-ext" placeholder="# Int" [formControl]="mentorForm.get('numberExt')" [(ngModel)]="numberExt">
+    </div>
+
+    <div class="form-group">
+      <label for="number-int"># Ext</label>
+      <input type="text" class="form-control" id="number-int" placeholder="# Ext" [formControl]="mentorForm.get('numberInt')" [(ngModel)]="numberInt">
+    </div>
+
+    <span>Entre</span>
+
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="between-one">Calle</label>
+            <input type="text" class="form-control" id="between-one" placeholder="Calle" [formControl]="mentorForm.get('betweenOne')" [(ngModel)]="betweenOne">
+          </div>
+
+          <span>Y</span>
+
+          <div class="form-group">
+            <label for="betweenTwo">Calle</label>
+            <input type="text" class="form-control" id="betweenTwo" placeholder="Calle" [formControl]="mentorForm.get('betweenTwo')" [(ngModel)]="betweenTwo">
+          </div>
+    </div>
+<!-- Others -->
+    <label class="radio-inline">
+        <input type="radio" value="morning" formControlName="schedule"> Matutino
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="evening" formControlName="schedule"> Vespertino
+    </label>
+
+    <div class="form-group">
+        <label for="dinning-room">Calle</label>
+        <input type="text" class="form-control" id="dinning-room" placeholder="No comedores" [formControl]="mentorForm.get('dinningRoom')" [(ngModel)]="dinningRoom">
+    </div>
+  
+    <label class="radio-inline">
+        <input type="radio" value="active" formControlName="status"> Activo
+    </label>
+
+    <label class="radio-inline">
+        <input type="radio" value="inactive" formControlName="status"> Inactivo
+    </label>
+
+    <div class="form-group">
+        <label for="shirt">Camisa</label>
+        <input type="text" class="form-control" id="shirt" placeholder="Camisa" [formControl]="mentorForm.get('shirt')" [(ngModel)]="shirt">
+    </div>
+    
+    <div class="form-group">
+      <label for="pants">Pantalones</label>
+      <input type="text" class="form-control" id="pants" placeholder="Pantalones" [formControl]="mentorForm.get('pants')" [(ngModel)]="pants">
+    </div>
+
+    <div class="form-group">
+      <label for="shoes">Zapatos</label>
+      <input type="text" class="form-control" id="shoes" placeholder="Zapatos" [formControl]="mentorForm.get('shoes')" [(ngModel)]="shoes">
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+    </div>
+
+  </form>
+</div>

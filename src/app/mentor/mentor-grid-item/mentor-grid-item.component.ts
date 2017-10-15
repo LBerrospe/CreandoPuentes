@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Mentor } from '../mentor.model';
 
 @Component({
   selector: 'app-mentor-grid-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mentor-grid-item.component.css']
 })
 export class MentorGridItemComponent implements OnInit {
+
+  @Input() mentor: Mentor;
 
   constructor() { }
 

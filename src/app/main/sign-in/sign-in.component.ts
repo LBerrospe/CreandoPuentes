@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
  * 
  */
 @Component({
-  selector: 'sign-in',
+  selector: 'app-sign-in',
   template: `
   <div class="sign-in">
     <form [formGroup]="signInForm" (ngSubmit)="onSignIn(signInForm.value)">

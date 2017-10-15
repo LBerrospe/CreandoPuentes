@@ -1,6 +1,6 @@
 export class Option {
 
-    constructor(public href: string, public img: string, public alt: string, public figCaption: string) {
+    constructor(public href: string, public fa: string, public opt: string) {
 
     }
 }

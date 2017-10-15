@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Beneficiary } from '../beneficiary.model';
 
 @Component({
-  selector: 'beneficiary-grid-item',
+  selector: 'app-beneficiary-grid-item',
   templateUrl: './beneficiary-grid-item.component.html',
   styleUrls: ['./beneficiary-grid-item.component.css']
 })
