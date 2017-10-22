@@ -11,15 +11,10 @@
         <input type="text" class="form-control" id="last-name" placeholder="Apellido(s)" [formControl]="mentorForm.get('lastName')" [(ngModel)]="lastName">
     </div>
 
-    <div class="form-group">
-      <label for="nickname">Apodo(s)</label>
-      <input type="text" class="form-control" id="nickname" placeholder="Apodo(s)" [formControl]="mentorForm.get('nickname')" [(ngModel)]="nickname">
-    </div>
-
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="curp">CURP</label>
         <input type="text" class="form-control" id="curp" placeholder="CURP" [formControl]="mentorForm.get('curp')" [(ngModel)]="curp">
-    </div>
+    </div> -->
 
     <my-date-picker 
         name="date" 
@@ -36,6 +31,11 @@
     <label class="radio-inline">
         <input type="radio" value="male" formControlName="gender"> Masculino
     </label>
+
+    <div class="form-group">
+        <label for="phone">Telefono</label>
+        <input type="text" class="form-control" id="phone" placeholder="Telefono" [formControl]="mentorForm.get('phone')" [(ngModel)]="neighborhood">
+    </div>
 <!-- Addres -->
     <div class="form-group">
         <label for="neighborhood">Colonia</label>
@@ -61,57 +61,34 @@
 
     <div class="form-inline">
         <div class="form-group">
-            <label for="between-one">Calle</label>
-            <input type="text" class="form-control" id="between-one" placeholder="Calle" [formControl]="mentorForm.get('betweenOne')" [(ngModel)]="betweenOne">
+            <label for="street-line-one">Calle</label>
+            <input type="text" class="form-control" id="street-line-one" placeholder="Calle" [formControl]="mentorForm.get('streetLineOne')" [(ngModel)]="streetLineOne">
           </div>
-
-          <span>Y</span>
 
           <div class="form-group">
-            <label for="betweenTwo">Calle</label>
-            <input type="text" class="form-control" id="betweenTwo" placeholder="Calle" [formControl]="mentorForm.get('betweenTwo')" [(ngModel)]="betweenTwo">
+            <label for="street-line-two">Calle</label>
+            <input type="text" class="form-control" id="street-line-two" placeholder="Calle" [formControl]="mentorForm.get('streetLineTwo')" [(ngModel)]="streetLineTwo">
           </div>
     </div>
-<!-- Others -->
-    <label class="radio-inline">
-        <input type="radio" value="morning" formControlName="schedule"> Matutino
-    </label>
-
-    <label class="radio-inline">
-        <input type="radio" value="evening" formControlName="schedule"> Vespertino
-    </label>
 
     <div class="form-group">
-        <label for="dinning-room">Calle</label>
-        <input type="text" class="form-control" id="dinning-room" placeholder="No comedores" [formControl]="mentorForm.get('dinningRoom')" [(ngModel)]="dinningRoom">
-    </div>
-  
-    <label class="radio-inline">
-        <input type="radio" value="active" formControlName="status"> Activo
-    </label>
-
-    <label class="radio-inline">
-        <input type="radio" value="inactive" formControlName="status"> Inactivo
-    </label>
-
-    <div class="form-group">
-        <label for="shirt">Camisa</label>
-        <input type="text" class="form-control" id="shirt" placeholder="Camisa" [formControl]="mentorForm.get('shirt')" [(ngModel)]="shirt">
-    </div>
-    
-    <div class="form-group">
-      <label for="pants">Pantalones</label>
-      <input type="text" class="form-control" id="pants" placeholder="Pantalones" [formControl]="mentorForm.get('pants')" [(ngModel)]="pants">
+        <label for="city">Ciudad</label>
+        <input type="text" class="form-control" id="city" placeholder="Ciudad" [formControl]="mentorForm.get('city')" [(ngModel)]="city">
     </div>
 
     <div class="form-group">
-      <label for="shoes">Zapatos</label>
-      <input type="text" class="form-control" id="shoes" placeholder="Zapatos" [formControl]="mentorForm.get('shoes')" [(ngModel)]="shoes">
+        <label for="state">Estado</label>
+        <input type="text" class="form-control" id="state" placeholder="Calle" [formControl]="mentorForm.get('state')" [(ngModel)]="state">
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+        <label for="zip-code">Codigo postal</label>
+        <input type="text" class="form-control" id="zip-code" placeholder="Calle" [formControl]="mentorForm.get('zipCode')" [(ngModel)]="zipCode">
     </div>
 
+    <div class="form-group">
+        <label for="country">Pais</label>
+        <input type="text" class="form-control" id="country" placeholder="Calle" [formControl]="mentorForm.get('country')" [(ngModel)]="country">
+    </div>
   </form>
 </div>

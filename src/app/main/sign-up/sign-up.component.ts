@@ -24,6 +24,7 @@ export class SignUpComponent {
       'email': [],
       'password': [],
       'password2': [],
+      'account': [],
       'birthday': [null, Validators.required],
       'gender': ['female', Validators.required]
     });

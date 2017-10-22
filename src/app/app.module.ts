@@ -15,13 +15,14 @@ import { MentorGridItemComponent } from './mentor/mentor-grid-item/mentor-grid-i
 import { ScoreComponent } from './score/score.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProviderComponent } from './provider/provider.component';
-import { PhoneComponent } from './phone/phone.component';
 import { AddBeneficiaryComponent } from './beneficiary/add-beneficiary/add-beneficiary.component';
 // https://github.com/kekeh/mydatepicker#options-attribute
 import { MyDatePickerModule } from 'mydatepicker';
 import { CalendarModule } from 'angular-calendar';
 import { AddMentorComponent } from './mentor/add-mentor/add-mentor.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PhoneGridComponent } from './phone/phone-grid/phone-grid.component';
+import { PhoneGridItemComponent } from './phone/phone-grid-item/phone-grid-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: '' },
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'mentor', component: MentorGridComponent},
   { path: 'score', component: ScoreComponent},
   { path: 'calendar', component: CalendarComponent},
-  { path: 'phone', component: PhoneComponent},
+  // { path: 'phone', component: PhoneComponent},
   { path: 'provider', component: ProviderComponent}
 
 ];
@@ -49,10 +50,12 @@ const routes: Routes = [
     ScoreComponent,
     CalendarComponent,
     ProviderComponent,
-    PhoneComponent,
+    // PhoneComponent,
     AddBeneficiaryComponent,
     NavbarComponent,
-    AddMentorComponent
+    AddMentorComponent,
+    PhoneGridComponent,
+    PhoneGridItemComponent
   ],
   imports: [
     BrowserModule,

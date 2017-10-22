@@ -8,28 +8,28 @@ import { Option } from './option.model';
     <div class="row">
       <div *ngFor="let opt of options" class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
         <a href="{{ opt.href }}">  
-          <figure>
+          <div class="grid-item {{ opt.color }}">
             <i class="{{ opt.fa }}" aria-hidden="true"></i>
-            <figcaption>{{ opt.opt }}</figcaption>
-          </figure>
+            <legend>{{ opt.opt }}</legend>
+          </div>
         </a> 
       </div>
     </div>
   </div>
   `,
-  styleUrls: []
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
   options: Option[];
 
   constructor() {
     this.options = [
-      new Option('#', 'fa fa-child', 'Beneficiario'),
-      new Option('#', 'fa fa-male', 'Representante'),
-      new Option('#', 'fa fa-bar-chart', 'Puntuacion'),
-      new Option('#', 'fa fa-calendar', 'Calendario'),
-      new Option('#', 'fa fa-phone', 'Telefonos'),
-      new Option('#', 'fa fa-university', 'Prestadores'),
+      new Option('#', 'fa fa-child', 'Beneficiario', Option.GREEN),
+      new Option('#', 'fa fa-male', 'Representante', Option.ORANGE),
+      new Option('#', 'fa fa-bar-chart', 'Puntuacion', Option.AMBER),
+      new Option('#', 'fa fa-calendar', 'Calendario', Option.PINK),
+      new Option('#', 'fa fa-phone', 'Telefonos', Option.BROWN),
+      new Option('#', 'fa fa-university', 'Prestadores', Option.BLUE),
     ];
   }
 

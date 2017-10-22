@@ -19,22 +19,20 @@ export class AddMentorComponent implements OnInit {
     this.mentorForm = fb.group({
       name: [], 
       lastName: [], 
-      nickname: [],
-      curp: [], 
+      // curp: [], 
       birthday: [null, Validators.required],
       gender: ['female', Validators.required],
+      phone: [],
       neighborhood: [],
       street: [],
       numberExt: [],
       numberInt: [],
-      betweenOne: [],
-      betweenTwo: [],      
-      schedule: ['morning', Validators.required],
-      dinningRoom: [],
-      status: ['active', Validators.required],
-      shirt: [],
-      pants: [],
-      shoes: [],
+      streetLineOne: [],
+      streetLineTwo: [],
+      city: [],
+      state: [],
+      zipCode: [],
+      country: []
     });
   }
 
